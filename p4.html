@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication</title>
+    <style>
+        /* Basic styles for the body */
+        body {
+            font-family: Arial, sans-serif; /* Default font */
+            margin: 0; /* Remove default margin */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            min-height: 100vh; /* Ensure full height */
+            background-color: #07dcf8;
+        }
+
+        /* Styles for the form container */
+        .container {
+            text-align: center; /* Center text */
+            background-color: white; /* Background for the container */
+            padding: 20px; /* Padding around the container */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border: 2px solid black; /* Black border */
+        }
+
+        /* Styles for input fields */
+        input {
+            padding: 15px; /* Increased padding */
+            font-size: 18px; /* Increased font size */
+            width: 250px; /* Width of the input fields */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Light border */
+            margin-bottom: 10px; /* Space below input fields */
+        }
+
+        /* Styles for buttons */
+        button {
+            margin: 5px; /* Space between buttons */
+            padding: 10px 15px; /* Padding inside buttons */
+            font-size: 16px; /* Increase font size */
+            color: black;
+            background-color: rgb(101, 248, 241);
+            border: 2px solid black; /* Black border for buttons */
+            border-radius: 20px; /* Rounded corners */
+            width: 200px; /* Adjusted width */
+            height: 40px; /* Adjusted height */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        /* Style for the result */
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multiplication</h1>
+        <form onsubmit="return multiplyNumbers(event);">
+            <input type="text" id="num1" placeholder="Enter the first number" required><br><br>
+            <input type="text" id="num2" placeholder="Enter the second number" required>
+            <br><br>
+            <button type="submit">MULTIPLY</button><br><br>
+        </form>
+        <div id="result"></div><br>
+        <a href="p1.html"><button type="button">Ok</button></a>
+    </div>
+
+    <script>
+        function multiplyNumbers(event) {
+            event.preventDefault(); // Prevent form submission
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const product = num1 * num2; // Calculate the product
+            document.getElementById('result').innerText = `Result: ${product}`;
+        }
+    </script>
+</body>
+</html>
